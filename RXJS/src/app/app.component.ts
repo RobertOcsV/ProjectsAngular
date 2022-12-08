@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +27,31 @@ import { Component } from '@angular/core';
   `,
   styles: []
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+ 
   title = 'RXJS';
+
+minhapromise(nome: string) : Promise<string>{
+  return new Promise((resolve, reject)=> {
+      if(nome == 'Eduardo'){
+        setTimeout(()=> {
+          resolve('Seja bem vindo ' + nome)
+        }, 5000);
+      }else{
+        reject('Ops! você não é o Eduardo');
+      }
+  })
+}
+// ngOnInit(): void {
+//   this.minhapromise('Lucas')
+//   .then(result => console.log(result));
+// }
+
+ngOnInit(): void {
+  this.minhapromise('Jose')
+  .then(result => console.log(result))
+  .catch(error => console.log(error))
+}
+//Lembrando: a promise não assincrona?, o sistema aguarda o resultado antes de continuar a rodar o código
+//A promisse é simples, ela espera uma resposta que pode te dar uma resposta ou um erro, e podemos tratar este erro e definir o tipo da promisse igual uma variável ou objeto
 }
