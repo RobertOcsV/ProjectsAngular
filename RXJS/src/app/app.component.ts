@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { observable, Observable, subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -31,27 +32,54 @@ export class AppComponent implements OnInit {
  
   title = 'RXJS';
 
-minhapromise(nome: string) : Promise<string>{
-  return new Promise((resolve, reject)=> {
-      if(nome == 'Eduardo'){
-        setTimeout(()=> {
-          resolve('Seja bem vindo ' + nome)
-        }, 5000);
-      }else{
-        reject('Ops! você não é o Eduardo');
-      }
-  })
-}
+// minhaPromise(nome: string) : Promise<string>{
+//   return new Promise((resolve, reject)=> {
+//       if(nome == 'Eduardo'){
+//         setTimeout(()=> {
+//           resolve('Seja bem vindo ' + nome)
+//         }, 5000);
+//       }else{
+//         reject('Ops! você não é o Eduardo');
+//       }
+//   })
+// }
 // ngOnInit(): void {
 //   this.minhapromise('Lucas')
 //   .then(result => console.log(result));
 // }
 
 ngOnInit(): void {
-  this.minhapromise('Jose')
-  .then(result => console.log(result))
-  .catch(error => console.log(error))
+  // this.minhaPromise('Jose')
+  // .then(result => console.log(result))
+  // .catch(error => console.log(error))
+
+  this.minhaObservable('Eduardo')
+    .subscribe(
+      result => console.log(result),
+      erro => console.log(erro));
+
 }
-//Lembrando: a promise não assincrona?, o sistema aguarda o resultado antes de continuar a rodar o código
+//Lembrando: a promise é não assincrona?, o sistema aguarda o resultado antes de continuar a rodar o código
 //A promisse é simples, ela espera uma resposta que pode te dar uma resposta ou um erro, e podemos tratar este erro e definir o tipo da promisse igual uma variável ou objeto
+
+//Já a observable pode ser assincrona ou não assincrona - pode continuar recebendo dados 
+//até receber um erro, e ainda temos a opção de retry e 
+//de tratamento de erro.
+minhaObservable(nome: string) : Observable<string>
+{
+  
+  return new Observable(subscriber => {
+    if(nome == 'Eduardo'){
+      subscriber.next('Olá! '+ nome);
+      subscriber.next('Olá de novo! '+ nome);
+      setTimeout(()=> {
+      subscriber.next('resposta com delay');
+    }, 5000);
+    } else{
+      subscriber.error('Ops, deu erro!!');
+    }
+  })
+}
+
+  
 }
