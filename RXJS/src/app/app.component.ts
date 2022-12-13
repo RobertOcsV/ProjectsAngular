@@ -48,6 +48,20 @@ export class AppComponent implements OnInit {
 //   .then(result => console.log(result));
 // }
 
+//nova forma de utilizar o subscribe:
+// this.minhaObservable('Maurício')
+//     .subscribe({
+//         next: (next) => {
+//             console.log(next);
+//         },
+//         error: (error) => {
+//             console.error(error);
+//         },
+//         complete: () => {
+//             console.info('Observable Completo');
+//         }
+//     });
+
 ngOnInit(): void {
   // this.minhaPromise('Jose')
   // .then(result => console.log(result))
@@ -64,32 +78,80 @@ ngOnInit(): void {
       complete: () => console.log('FIM!') //tratamento de finalização
     }
 
-    const obs = this.minhaObservable('Eduardo');
-    obs.subscribe(observer);
+    // const obs = this.usuarioObservable('Eduardo');
+    // obs.subscribe(observer);
+
+    const obs = this.usuarioObservable('Admin', 'admin@hotmail.com');
+    const subs = obs.subscribe(observer);
+
+    setTimeout(()=>{
+      subs.unsubscribe();
+      console.log("conexão fechada: " + subs.closed)
+    }, 3500)
 }
-//Lembrando: a promise é não assincrona?, o sistema aguarda o resultado antes de continuar a rodar o código
+//Lembrando: a promise é somente assincrona, o sistema aguarda o resultado antes de continuar a rodar o código
 //A promisse é simples, ela espera uma resposta que pode te dar uma resposta ou um erro, e podemos tratar este erro e definir o tipo da promisse igual uma variável ou objeto
 
 //Já a observable pode ser assincrona ou não assincrona - pode continuar recebendo dados 
 //até receber um erro, e ainda temos a opção de retry e 
 //de tratamento de erro.
 
-minhaObservable(nome: string) : Observable<string>
-{
+// minhaObservable(nome: string) : Observable<string>
+// {
   
+//   return new Observable(subscriber => {
+//     if(nome == 'Eduardo'){
+//       subscriber.next('Olá! '+ nome);
+//       subscriber.next('Olá de novo! '+ nome);
+//       setTimeout(()=> {
+//       subscriber.next('resposta com delay');
+//     }, 5000);
+//     subscriber.complete();
+//     } else{
+//       subscriber.error('Ops, deu erro!!');
+//     }
+//   })
+// }
+
+usuarioObservable(nome: string, email: string) : Observable<Usuario>
+{  
   return new Observable(subscriber => {
-    if(nome == 'Eduardo'){
-      subscriber.next('Olá! '+ nome);
-      subscriber.next('Olá de novo! '+ nome);
+    if(nome === 'Admin'){
+      let usuario = new Usuario(nome, email);      
       setTimeout(()=> {
-      subscriber.next('resposta com delay');
-    }, 5000);
-    subscriber.complete();
+      subscriber.next(usuario);
+    }, 1000);
+
+    setTimeout(()=> {
+      subscriber.next(usuario);
+    }, 2000);
+
+    setTimeout(()=> {
+      subscriber.next(usuario);
+    }, 3000);
+
+    setTimeout(()=> {
+      subscriber.next(usuario);
+    }, 4000);
+
+    setTimeout(()=> {
+      subscriber.complete();
+    }, 5000);    
     } else{
       subscriber.error('Ops, deu erro!!');
     }
   })
 }
-
   
+}
+
+export class Usuario{
+  constructor(nome: string, email:string)
+  {
+    this.nome = nome;
+    this.email = email;
+  }
+  nome: string;
+  email: string;
+
 }
