@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgBrazilValidators } from 'ng-brazil/lib.module';
+import { NgBrazilValidators } from 'ng-brazil';
 import { Usuario } from '../../models/usuario';
 
 @Component({

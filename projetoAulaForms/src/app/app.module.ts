@@ -5,7 +5,6 @@ import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 import { NgBrazil } from 'ng-brazil';
-import { TextMask } from 'ng-brazil/lib.module';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './navegacao/menu/menu.component';
@@ -14,6 +13,7 @@ import { FooterComponent } from './navegacao/footer/footer.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
 import { rootRouterConfig } from './app.routes';
 import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.component';
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.compo
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    TextMask.TextMaskModule,
+    TextMaskModule,
     NgBrazil,
     [RouterModule.forRoot(rootRouterConfig, { useHash: false})]
   ],
