@@ -1,3 +1,4 @@
+import { GenericValidator, ValidationMessages, DisplayMessage } from './generic-form-validation';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgBrazilValidators } from 'ng-brazil';
@@ -15,7 +16,40 @@ export class CadastroComponent implements OnInit {
   usuario: Usuario;
   formResult: string = '';
   MASKS = utilsBr.MASKS;
-  constructor(private fb: FormBuilder) { }
+
+  validationMessages: ValidationMessages;
+  genericValidator: GenericValidator;
+  displayMessage: DisplayMessage;
+
+  constructor(private fb: FormBuilder) { 
+    this.validationMessages = {
+      nome: {
+        required: 'O nome é requerido',
+        minLength: 'O nome precisa ter no mínimo 2 caracteres',
+        maxLength: 'O nome precisa ter no máximo 150 caracteres'
+      },
+      cpf: {
+          required: 'Informe o CPF',
+          cpf: 'CPF não existe'
+      },
+      email: {
+        required: 'Informe o e-mail',
+        email: 'Email inválido'
+      },
+      senha: {
+        required: 'Informe a senha',
+        rangeLength: 'A senha deve possuir entre 6 a 15 caracteres'
+      },
+      senhaConfirmacao: {
+        required: 'Informe a senha novamente',
+        rangeLength: 'A senha deve possuir entre 6 a 15 caracteres',
+        equalTo: 'As senha não conferem'
+      }
+    };
+
+    this.genericValidator = new GenericValidator(this.validationMessages);
+
+  }
 
   ngOnInit() {
 
