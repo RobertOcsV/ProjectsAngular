@@ -41,6 +41,10 @@ export class CadastroComponent implements OnInit, AfterViewInit {
         required: 'Informe o e-mail',
         email: 'Email inválido'
       },
+      cep: {
+        required: 'Informe o seu CEP',
+        cep: 'formato de CEP inválido'
+      },
       senha: {
         required: 'Informe a senha',
         rangeLength: 'A senha deve possuir entre 6 e 15 caracteres'
@@ -63,6 +67,7 @@ export class CadastroComponent implements OnInit, AfterViewInit {
       nome: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
       cpf: ['', [Validators.required, NgBrazilValidators.cpf]],
       email: ['', [Validators.required, Validators.email]],
+      cep: ['', [Validators.required, NgBrazilValidators.cep]],
       senha: senha,
       senhaConfirmacao: senhaConfirm
     });
