@@ -11,8 +11,9 @@ import { TextMaskModule } from 'angular2-text-mask';
 
 import { AppComponent } from './app.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
-import { rootRouterConfig } from './app.routes';
+
 import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.component';
+import { AppRoutingModule } from './app.routes';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.compo
     TextMaskModule,
     NgBrazil,
     CustomFormsModule,
-    [RouterModule.forRoot(rootRouterConfig, { useHash: false})]
+   AppRoutingModule
   ],
   providers: [
     {provide: APP_BASE_HREF, useValue: '/'}
