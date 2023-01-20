@@ -16,11 +16,12 @@ import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.compo
 import { AppRoutingModule } from './app.routes';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SobreComponent,
-    CadastroComponent
+    CadastroComponent,
   ],
   imports: [
     NavegacaoModule,
