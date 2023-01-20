@@ -12,4 +12,4 @@ const produtoRouterConfig: Routes = [
     ],
     exports: [RouterModule]
 })
-export class ProdutoRoutingModule { }
+export class ProdutosRoutingModule { }
