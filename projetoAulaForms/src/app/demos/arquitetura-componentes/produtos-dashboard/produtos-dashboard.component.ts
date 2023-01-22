@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ProdutoCountComponent } from './../components/produto-count.component';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { fromEvent, Observable } from 'rxjs';
 import { Produto } from '../models/produto';
 
 @Component({
@@ -6,11 +8,15 @@ import { Produto } from '../models/produto';
   templateUrl: './produtos-dashboard.component.html',
   styles: []
 })
-export class ProdutosDashboardComponent implements OnInit {
+export class ProdutosDashboardComponent implements OnInit, AfterViewInit {
 
   produtos: Produto[]
 
+@ViewChild(ProdutoCountComponent, {static: false}) contador: ProdutoCountComponent;  
+@ViewChild('teste', {static: false}) mensagemTela: ElementRef;
+
   constructor() { }
+  
 
   ngOnInit() {
     this.produtos = [{
@@ -55,6 +61,15 @@ export class ProdutosDashboardComponent implements OnInit {
       valor: 600,
       imagem: 'headset.jpg'
     }];
+  }
+
+
+  ngAfterViewInit(): void {
+    let clickTexto: Observable<any> = fromEvent(this.mensagemTela.nativeElement, 'click');
+    clickTexto.subscribe(()=>{
+      alert('clicou no texto!');
+      return;
+    })
   }
 
   mudarStatus(event: Produto){
