@@ -1,7 +1,7 @@
-import { NavegacaoModule } from './navegacao/navegacao.model';
+import { NavegacaoModule } from './navegacao/navegacao.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
@@ -14,6 +14,7 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 
 import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.component';
 import { AppRoutingModule } from './app.routes';
+import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 
 
 

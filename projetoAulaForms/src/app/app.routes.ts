@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './navegacao/home/home.component';
@@ -14,7 +15,9 @@ import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.compo
     path: 'produtos',  
     loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
     .then(m => m.ProdutoModule)
-    }
+    },
+
+    { path: '**', component: NotFoundComponent}
 ];
 
 
