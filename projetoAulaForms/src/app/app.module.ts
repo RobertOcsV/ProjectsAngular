@@ -14,7 +14,7 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 
 import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.component';
 import { AppRoutingModule } from './app.routes';
-import { NotFoundComponent } from './navegacao/not-found/not-found.component';
+
 
 
 
@@ -35,7 +35,7 @@ import { NotFoundComponent } from './navegacao/not-found/not-found.component';
    AppRoutingModule
   ],
   providers: [
-    {provide: APP_BASE_HREF, useValue: '/'}
+    
   ],
   bootstrap: [AppComponent]
 })
