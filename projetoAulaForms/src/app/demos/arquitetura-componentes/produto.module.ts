@@ -8,12 +8,14 @@ registerLocaleData(localePt);
 import { CommonModule, registerLocaleData } from "@angular/common";
 import { ProdutosDashboardComponent } from './produtos-dashboard/produtos-dashboard.component';
 import { ProdutoDetalheComponent } from './components/produto-card-detalhe.component';
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 
 @NgModule({
 declarations:[
     ProdutosDashboardComponent,
     ProdutoDetalheComponent,
-    ProdutoCountComponent
+    ProdutoCountComponent,
+    EditarProdutoComponent
 ],
 imports:[
     CommonModule,
