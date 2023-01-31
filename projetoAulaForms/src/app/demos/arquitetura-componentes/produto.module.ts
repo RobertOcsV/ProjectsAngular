@@ -1,3 +1,4 @@
+import { ProdutoAppComponent } from './produto.app.component';
 import { ProdutoCountComponent } from './components/produto-count.component';
 import { ProdutosRoutingModule } from './produto.route';
 import { NgModule } from "@angular/core";
@@ -15,7 +16,8 @@ declarations:[
     ProdutosDashboardComponent,
     ProdutoDetalheComponent,
     ProdutoCountComponent,
-    EditarProdutoComponent
+    EditarProdutoComponent,
+    ProdutoAppComponent
 ],
 imports:[
     CommonModule,
