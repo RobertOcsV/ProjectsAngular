@@ -10,6 +10,7 @@ import { CommonModule, registerLocaleData } from "@angular/common";
 import { ProdutosDashboardComponent } from './produtos-dashboard/produtos-dashboard.component';
 import { ProdutoDetalheComponent } from './components/produto-card-detalhe.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { ProdutoService } from './services/produto.service';
 
 @NgModule({
 declarations:[
@@ -22,6 +23,9 @@ declarations:[
 imports:[
     CommonModule,
     ProdutosRoutingModule
+],
+providers:[
+    ProdutoService
 ],
 exports:[]
 })
