@@ -1,6 +1,6 @@
 import { ProdutoService } from './../services/produto.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from '../models/produto';
 
 @Component({
@@ -13,7 +13,9 @@ export class EditarProdutoComponent implements OnInit {
   produto: Produto;
 
   constructor(
-    private route: ActivatedRoute, private produtoService: ProdutoService
+    private route: ActivatedRoute, 
+    private produtoService: ProdutoService,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -22,5 +24,14 @@ export class EditarProdutoComponent implements OnInit {
       this.produto = this.produtoService.obterPorId(params['id']);
     });
   }
+
+  salvar(){
+    //fazer comunicacao com backend
+
+    this.router.navigate(['/produtos']);
+    // this.router.navigateByUrl('/produtos');
+  }
+
+
 
 }
