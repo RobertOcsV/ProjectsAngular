@@ -6,6 +6,7 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.component';
 import { AuthGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 
 
 
@@ -13,6 +14,7 @@ import { CadastroGuard } from './services/cadastro.guard';
     { path: '', redirectTo: '/home', pathMatch: 'full'},
     { path: 'home', component: HomeComponent},
     { path: 'sobre', component: SobreComponent },
+    { path: 'filmes', component: FilmesComponent },
     { path: 'cadastro', component: CadastroComponent, canDeactivate: [CadastroGuard] },
     {
     path: 'produtos',  

@@ -28,6 +28,12 @@ nav: Nav[] = [
     admin: false
   },
   {
+    link: '/filmes',
+    name: 'Filmes',
+    exact: false,
+    admin: false
+  },
+  {
     link: '/produtos',
     name: 'Produtos',
     exact: true,
