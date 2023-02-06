@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './navegacao/home/home.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
 import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.component';
+import { AuthGuard } from './services/app.guard';
+
 
 
  const rootRouterConfig: Routes = [
@@ -16,6 +18,11 @@ import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.compo
     loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
     .then(m => m.ProdutoModule)
     },
+    {
+    path: 'admin',  
+    loadChildren: () => import('./admin/admin.module')
+    .then(m => m.AdminModule),
+    canLoad: [AuthGuard]},
 
     { path: '**', component: NotFoundComponent}
 ];
