@@ -1,14 +1,18 @@
 import { Injectable } from "@angular/core";
-import { CanLoad, Route, UrlSegment } from "@angular/router";
+import { CanActivate, CanLoad, Route, UrlSegment } from "@angular/router";
 import { Observable } from "rxjs";
 
 @Injectable()
-export class AuthGuard implements CanLoad {
+export class AuthGuard implements CanLoad, CanActivate {
 
-    user = { admin: true, logged: false }
+    user = { admin: true, logged: true }
 
     canLoad() : boolean {
         return this.user.admin;
+    }
+
+    canActivate() : boolean {
+        return this.user.logged;
     }
 
 }
