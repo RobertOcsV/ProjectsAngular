@@ -15,6 +15,7 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.component';
 import { AppRoutingModule } from './app.routes';
 import { AuthGuard } from './services/app.guard';
+import { CadastroGuard } from './services/cadastro.guard';
 
 
 
@@ -38,7 +39,8 @@ import { AuthGuard } from './services/app.guard';
    AppRoutingModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    CadastroGuard
   ],
   bootstrap: [AppComponent]
 })
