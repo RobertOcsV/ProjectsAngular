@@ -1,6 +1,6 @@
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 
 // import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
@@ -24,9 +24,12 @@ import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
 import { BarModule } from './demos/bar-di-zones/bar.module';
+import { BarServices } from './demos/bar-di-zones/bar.service';
 
 
-
+export const BAR_PROVIDERS: Provider[] = [
+  
+];
 
 
 
@@ -53,7 +56,8 @@ import { BarModule } from './demos/bar-di-zones/bar.module';
   ],
   providers: [
     AuthGuard,
-    CadastroGuard
+    CadastroGuard,
+    BarServices
   ],
   bootstrap: [AppComponent]
 })
