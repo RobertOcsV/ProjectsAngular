@@ -1,3 +1,4 @@
+import { BarComponent } from './demos/bar-di-zones/bar.component';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,6 +17,7 @@ import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
     { path: 'sobre', component: SobreComponent },
     { path: 'filmes', component: FilmesComponent },
     { path: 'cadastro', component: CadastroComponent, canDeactivate: [CadastroGuard] },
+    { path: 'bar', component: BarComponent },
     {
     path: 'produtos',  
     loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
