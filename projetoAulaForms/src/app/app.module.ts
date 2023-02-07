@@ -28,7 +28,7 @@ import { BarServices } from './demos/bar-di-zones/bar.service';
 
 
 export const BAR_PROVIDERS: Provider[] = [
-  
+  BarServices // pode colocar outros, fazer uma coleção de providers
 ];
 
 
@@ -57,7 +57,7 @@ export const BAR_PROVIDERS: Provider[] = [
   providers: [
     AuthGuard,
     CadastroGuard,
-    BarServices
+    BAR_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })
