@@ -19,3 +19,19 @@ export class BarServices {
   }
 }
 
+export class BarServicesMock {
+
+    constructor( private http: HttpClient ) { }
+  
+    obterBebidas(): string {
+      return 'Bebida1';
+    }
+  
+    obterPorcoes(): string {
+      return 'Porções';
+    }
+  
+    obterRefeicoes(): string {
+      return 'Refeições';
+    }
+  }

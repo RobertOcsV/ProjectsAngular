@@ -25,12 +25,11 @@ import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
 import { BarModule } from './demos/bar-di-zones/bar.module';
 import { BarServices } from './demos/bar-di-zones/bar.service';
-
+import { HttpClientModule } from '@angular/common/http';
 
 export const BAR_PROVIDERS: Provider[] = [
   BarServices // pode colocar outros, fazer uma coleção de providers
 ];
-
 
 
 @NgModule({
@@ -52,12 +51,13 @@ export const BAR_PROVIDERS: Provider[] = [
     NgBrazil,
     CustomFormsModule,
     AppRoutingModule,
-    BarModule
+    BarModule,
+    HttpClientModule
   ],
   providers: [
     AuthGuard,
     CadastroGuard,
-    BAR_PROVIDERS
+    // BAR_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })
