@@ -51,7 +51,10 @@ export const BAR_PROVIDERS: Provider[] = [
     NgBrazil,
     CustomFormsModule,
     AppRoutingModule,
-    BarModule,
+    BarModule.forRoot({
+      unidadeId: 1000,
+      unidadeToken: 'eca983c99a0e8ff8911928dc'
+    }),
     HttpClientModule
   ],
   providers: [
