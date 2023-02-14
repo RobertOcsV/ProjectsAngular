@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { BarUnidadeConfig, BAR_UNIDADE_CONFIG } from './bar.config';
 import { BarFactory, BarServices, BarServicesMock } from './bar.service';
-import {Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Injector } from '@angular/core';
 
 
 @Component({
@@ -12,7 +12,7 @@ import {Component, Inject, OnInit } from '@angular/core';
     {
        provide: BarServices, useFactory: BarFactory,
        deps: [
-          HttpClient, BAR_UNIDADE_CONFIG
+          HttpClient, Injector
        ] 
     } 
   ]
