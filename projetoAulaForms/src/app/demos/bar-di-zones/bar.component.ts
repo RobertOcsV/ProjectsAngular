@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { BarUnidadeConfig, BAR_UNIDADE_CONFIG } from './bar.config';
-import { BarServices, BarServicesMock } from './bar.service';
+import { BarFactory, BarServices, BarServicesMock } from './bar.service';
 import {Component, Inject, OnInit } from '@angular/core';
 
 
@@ -7,13 +8,20 @@ import {Component, Inject, OnInit } from '@angular/core';
   selector: 'app-bar',
   templateUrl: './bar.component.html',
   providers: [
-    { provide: BarServices, useClass: BarServicesMock } 
+    // { provide: BarServices, useClass: BarServicesMock }, 
+    {
+       provide: BarServices, useFactory: BarFactory,
+       deps: [
+          HttpClient, BAR_UNIDADE_CONFIG
+       ] 
+    } 
   ]
 })
 export class BarComponent implements OnInit {
   ConfigManual: BarUnidadeConfig;
   barBebida1: string;
   Config: BarUnidadeConfig;
+  dadosUnidade: string;
 
   constructor(
     private barServices: BarServices,
@@ -25,6 +33,8 @@ export class BarComponent implements OnInit {
       this.barBebida1 = this.barServices.obterBebidas();
       this.ConfigManual = this.ApiConfigManual
       this.Config = this.ApiConfig 
+
+      this.dadosUnidade = this.barServices.obterUnidade();
   }
 
 }
