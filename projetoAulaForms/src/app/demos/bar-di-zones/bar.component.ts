@@ -62,7 +62,7 @@ export class BarComponent implements OnInit {
   }
 
 
-   _increaseProgress(doneCallback: () => void) {
+   _increaseProgress(doneCallback: () => void) { 
     this.progress += 1;
     console.log(`Progresso atual: ${this.progress}%`);
 

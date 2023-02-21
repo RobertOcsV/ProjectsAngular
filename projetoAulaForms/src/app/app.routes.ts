@@ -8,6 +8,7 @@ import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.compo
 import { AuthGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
+import { TodoComponent } from './demos/todo-list/todo.component';
 
 
 
@@ -18,6 +19,7 @@ import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
     { path: 'filmes', component: FilmesComponent },
     { path: 'cadastro', component: CadastroComponent, canDeactivate: [CadastroGuard] },
     { path: 'bar', component: BarComponent },
+    { path: 'todo', component: TodoComponent },
     {
     path: 'produtos',  
     loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
