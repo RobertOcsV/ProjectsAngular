@@ -1,4 +1,6 @@
+import { Nav } from './models/dinamicnav';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+  nav: Nav[] = [
+  {
+    link: '/home',
+    name: 'Home',
+    exact: true,
+    admin: false
+  },
+
+
+]
 }
