@@ -1,14 +1,18 @@
-import { NgModule } from '@angular/core';
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { NavegacaoModule } from './navegacao/navegacao.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NavegacaoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
