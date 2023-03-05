@@ -1,5 +1,6 @@
 import { Nav } from './models/dinamicnav';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -7,16 +8,33 @@ import { Component } from '@angular/core';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
 
-  nav: Nav[] = [
-  {
-    link: '/home',
-    name: 'Home',
-    exact: true,
-    admin: false
-  },
+  navs: Nav[] = [];
+  item: any;
 
 
-]
+  ngOnInit(): void {
+    this.navs =  [
+      {
+        link: '/home',
+        name: 'Home',
+        exact: true,
+        admin: false
+      },
+      {
+        link: '/home',
+        name: 'Home',
+        exact: true,
+        admin: false
+      },
+
+    ]
+  }
+
+
+
+
+
+
 }
