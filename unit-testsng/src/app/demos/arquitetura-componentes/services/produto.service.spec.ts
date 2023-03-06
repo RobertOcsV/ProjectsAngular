@@ -63,7 +63,8 @@ describe('ProdutoService', () => {
 
         let result = service.obterPorId(2)
 
-        expect(result).toEqual(produtoFake);
+        expect(result).toEqual(produtoFake);        
         expect(result.id).toEqual(2);
     });
+
 });

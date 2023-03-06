@@ -20,8 +20,7 @@ class MockHttp {
     }
 }
 
-describe('TasksService', () => {
-
+describe('TasksService', () =>{
     let service: TasksService;
     let http: HttpClient;
 
@@ -37,8 +36,9 @@ describe('TasksService', () => {
         service = bed.get(TasksService);
     });
 
+
     it('Deve retornar lista de tarefas', () => {
-        //spyOn(http, 'get').and.returnValue(createResponse(todolist));
+        // spyOn(http, 'get').and.returnValue(createResponse(todolist));
 
         service.getTodoList$
             .subscribe((result) => {
@@ -50,4 +50,7 @@ describe('TasksService', () => {
             });
     });
 
+
 });
+
+
