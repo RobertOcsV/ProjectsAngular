@@ -23,6 +23,7 @@ describe('Testes do formulario de cadastro', () => {
     page.botaoRegistrar.click();
     page.esperar(1000);
 
+
     expect(page.obterResultadoCadastro()).toContain('"nome":"Eduardo Pires"');
   });
 
