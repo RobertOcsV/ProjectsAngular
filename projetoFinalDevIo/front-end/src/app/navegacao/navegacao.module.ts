@@ -1,4 +1,7 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -19,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     imports:[
       CommonModule,
       RouterModule,
-      NgbModule
+      NgbModule,
+      BrowserAnimationsModule
     ],
     exports:[
       MenuComponent,
