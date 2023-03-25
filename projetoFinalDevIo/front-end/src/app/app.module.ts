@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
+import { ContaModule } from './conta/conta.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
     BrowserModule,
     AppRoutingModule,
     NavegacaoModule,
+    ContaModule,
     NgbModule,
     BrowserAnimationsModule
   ],
