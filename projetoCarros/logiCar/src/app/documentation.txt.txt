@@ -1,0 +1,17 @@
+funcionalides iniciais:
+
+Cadastramento de veículos no sistema (banco CRUD)
+consulta do veículo.
+encontra-se dentro do estacionamento? boolean
+Login do funcionário
+
+telas:
+Inicio - mostra todos carros cadastrados, quantos estão ativos no estacionamento e o limite de espaço
+Administração - mostra o CRUD dos veículos, com os dados: Formulário: RG do cliente, placa do carro, data de estacionamento, nome completo
+login e cadastro
+
+
+
+
+
+futuro: pagamentos, multas, observações"

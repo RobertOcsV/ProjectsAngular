@@ -5,6 +5,7 @@ import { MenuComponent } from './menu/menu.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations:[
@@ -15,7 +16,9 @@ import { FooterComponent } from './footer/footer.component';
     ],
     imports:[
       CommonModule,
-      RouterModule
+      RouterModule,
+      BrowserAnimationsModule
+
     ],
     exports:[
       MenuComponent,
