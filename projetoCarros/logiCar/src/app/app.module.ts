@@ -1,3 +1,4 @@
+import { AdministracaoModule } from './administracao/administracao.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,7 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     NavegacaoModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AdministracaoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
