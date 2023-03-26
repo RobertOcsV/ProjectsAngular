@@ -1,29 +1,17 @@
-<div class="layout-topbar">
-  <a class="layout-topbar-logo" routerLink="">
-
-      <span>SAKAI</span>
-  </a>
-
-  <button #menubutton class="p-link layout-menu-button layout-topbar-button">
-      <i class="pi pi-bars"></i>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
   </button>
+  <span>Meu menu</span>
+</mat-toolbar>
 
-  <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button">
-      <i class="pi pi-ellipsis-v"></i>
-  </button>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" class="sidenav" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">Inicio</a>
+      <a mat-list-item routerLink="/about">Administração</a>
+      <a mat-list-item routerLink="/contact">Contato</a>
+    </mat-nav-list>
+  </mat-sidenav>
 
-  <div #topbarmenu class="layout-topbar-menu">
-      <button class="p-link layout-topbar-button" href="/">
-          <i class="pi pi-calendar"></i>
-          <span>Calendar</span>
-      </button>
-      <button class="p-link layout-topbar-button">
-          <i class="pi pi-user"></i>
-          <span>Profile</span>
-      </button>
-      <button class="p-link layout-topbar-button">
-          <i class="pi pi-cog"></i>
-          <span>Settings</span>
-      </button>
-  </div>
-</div>
+</mat-sidenav-container>
