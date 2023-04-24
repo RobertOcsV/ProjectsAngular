@@ -4,7 +4,10 @@ import { HomeComponent } from './navegacao/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home',
+    loadChildren: () => import('./navegacao/navegacao.module')
+      .then(m => m.NavegacaoModule)
+  },
   { path: 'administracao',
     loadChildren: () => import('./administracao/administracao.module')
       .then(m => m.AdministracaoModule)
