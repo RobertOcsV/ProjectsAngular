@@ -3,15 +3,21 @@ funcionalides iniciais:
 Cadastramento de veículos no sistema (banco CRUD)
 consulta do veículo.
 encontra-se dentro do estacionamento? boolean
-Login do funcionário
+
 
 telas:
 Inicio - mostra todos carros cadastrados, quantos estão ativos no estacionamento e o limite de espaço
 Administração - mostra o CRUD dos veículos, com os dados: Formulário: RG do cliente, placa do carro, data de estacionamento, nome completo
-login e cadastro
+
+paleta de cores:
+#78A0ED
+#78D8F6
+#3f51b5
 
 
 
+futuro: pagamentos, multas, observações" login e cadastro
 
-
-futuro: pagamentos, multas, observações"
+///////////// DETALHES PROJETO /////////////
+MODAL:
+A modal se encontra dentro do componente MENU

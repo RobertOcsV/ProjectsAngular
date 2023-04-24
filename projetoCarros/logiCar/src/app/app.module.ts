@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavContainer, MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     NavegacaoModule,
     BrowserAnimationsModule,
-    AdministracaoModule
+    AdministracaoModule,
+    MatSidenavModule
   ],
-  providers: [],
+  providers: [
+    MatSidenavContainer
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
