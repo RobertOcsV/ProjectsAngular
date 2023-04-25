@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InterfaceComponent } from './interface/interface.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -9,7 +10,8 @@ import { InterfaceComponent } from './interface/interface.component';
     InterfaceComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule
   ]
 })
 export class AdministracaoModule { }

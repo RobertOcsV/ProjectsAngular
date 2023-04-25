@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavContainer, MatSidenavModule } from '@angular/material/sidenav';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MatSidenavContainer, MatSidenavModule } from '@angular/material/sidenav
     NavegacaoModule,
     BrowserAnimationsModule,
     AdministracaoModule,
-    MatSidenavModule
+    MatSidenavModule,
+    CommonModule
+
   ],
   providers: [
     MatSidenavContainer
