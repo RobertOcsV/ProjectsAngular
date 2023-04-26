@@ -8,8 +8,6 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CommonModule } from '@angular/common';
-
-
 @NgModule({
   declarations: [
     AppComponent
@@ -23,13 +21,10 @@ import { CommonModule } from '@angular/common';
     NavegacaoModule,
     BrowserAnimationsModule,
     AdministracaoModule,
-    MatSidenavModule,
     CommonModule
 
   ],
-  providers: [
-    MatSidenavContainer
-  ],
+  providers: [CommonModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

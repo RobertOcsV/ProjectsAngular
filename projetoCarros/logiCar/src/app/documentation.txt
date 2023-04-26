@@ -18,6 +18,9 @@ paleta de cores:
 
 futuro: pagamentos, multas, observações" login e cadastro
 
-///////////// DETALHES PROJETO /////////////
-MODAL:
-A modal se encontra dentro do componente MENU
+                                    ///////////// DETALHES PROJETO /////////////
+
+
+O projeto foi desenvolvido com base no PRIMENG, tentei utilizar componentes do angular materials porém não é aplicado
+Desenvolvimento em SPA..
+
