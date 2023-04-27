@@ -7,13 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MatListModule } from '@angular/material/list';
-// import { MatButtonModule } from '@angular/material/button';
-// import { MatToolbarModule } from '@angular/material/toolbar';
+
+
+// import { BrowserModule } from '@angular/platform-browser';
+
 import { MenubarModule } from 'primeng/menubar';
-import { AppComponent } from '../app.component';
+
 
 
 @NgModule({
@@ -27,9 +26,9 @@ import { AppComponent } from '../app.component';
     imports:[
       CommonModule,
       RouterModule,
-      BrowserModule,
-      BrowserAnimationsModule,
-      MenubarModule
+      MenubarModule,
+
+
 
     ],
     exports:[

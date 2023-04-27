@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
 
@@ -7,7 +7,8 @@ import { PrimeNGConfig } from 'primeng/api';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.scss'],
+  encapsulation: ViewEncapsulation.None
 
 
 })
@@ -18,13 +19,15 @@ export class MenuComponent implements OnInit {
   constructor(private primengConfig: PrimeNGConfig) {}
 
   ngOnInit() {
-
     this.primengConfig.ripple = true;
 
       this.items = [
           {
-              label: 'File',
+              label: 'modal',
               icon: 'pi pi-fw pi-file',
+              command: () => {
+                alert('ESSE BOTAO FUNCIONA');
+              },
               items: [
                   {
                       label: 'New',

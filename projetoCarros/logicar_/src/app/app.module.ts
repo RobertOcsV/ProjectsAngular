@@ -7,7 +7,16 @@ import { AppComponent } from './app.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+
+
+import { MenubarModule } from 'primeng/menubar';
+
 import { CommonModule } from '@angular/common';
+import { ColorPickerModule } from 'primeng/colorpicker';
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,7 +30,11 @@ import { CommonModule } from '@angular/common';
     NavegacaoModule,
     BrowserAnimationsModule,
     AdministracaoModule,
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    FormsModule,
+    MenubarModule,
+    ColorPickerModule
 
   ],
   providers: [CommonModule],

@@ -2,3 +2,8 @@
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
+.blue-panel{
+  .p-menubar {
+    background: var(--blue-500);
+  }
+}
